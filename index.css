@@ -158,4 +158,5 @@ span::before {
     font-style: italic;
     font-size: 11px;
     align-self: flex-end;
+    margin-right: 15px;
 }
