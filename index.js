@@ -1,3 +1,3 @@
 document.addEventListener('mousemove', (event) => {
-    console.log(event);
+    console.log('Test',event);
 })
