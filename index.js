@@ -28,3 +28,16 @@ document.addEventListener('touchmove', (event) => {
         }, 1000);
     }
 });
+
+document.onreadystatechange = () => {
+    if (document.readyState === 'complete') {
+        const cardLink = document.querySelector('.card');
+        const header = document.querySelector('.header');
+        const message = document.querySelector('.message');
+        cardLink.addEventListener('click', () => {
+            cardLink.classList.toggle('active');
+            header.classList.toggle('hide');
+            message.classList.toggle('show');
+        });
+    }
+}

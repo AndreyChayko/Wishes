@@ -1,3 +1,8 @@
+@font-face {
+    font-family: CustomFont;
+    src: url('Caveat-Regular.ttf');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +12,7 @@ html {
     overflow: hidden;
 }
 body {
+    font-family: CustomFont;
     min-height: 100vh;
     background: #111;
     overflow: hidden;
@@ -45,4 +51,111 @@ span::before {
     100% {
         transform: translate(300px) rotate(360deg);
     }
+}
+
+/* Card */
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: #fff;
+    border-radius: 75px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.header {
+    font-size: 20px;
+}
+
+.header.hide {
+    display: none;
+}
+
+.card.active {
+    background: transparent;
+    color: #fff;
+}
+
+.message {
+    display: none;
+}
+
+.message.show {
+    height: 100%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card:before {
+    content: '';
+    position: absolute;
+    top: 65px;
+    left: 0;
+    background: #ff0047;
+    width: 180px;
+    height: 150px;
+    transition: 0.5s;
+    z-index: -1;
+    transform: translateX(-300px) rotate(-325deg);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.card.active:before {
+    left: 30px;
+    transform: translateX(0px) rotate(35deg);
+    border-bottom-left-radius: 75px;
+    border-top-left-radius: 75px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.card:after {
+    content: '';
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background: #ff0047;
+    width: 180px;
+    height: 150px;
+    transition: 0.5s;
+    z-index: -1;
+    transform: translateX(300px) rotate(325deg);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.card.active:after {
+    right: 30px;
+    transform: translateX(0px) rotate(-35deg);
+    border-bottom-right-radius: 75px;
+    border-top-right-radius: 75px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.disclaimer {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #ff0047;
+}
+
+.main-text {
+    font-size: 16px;
+}
+
+.sign {
+    font-style: italic;
+    font-size: 11px;
+    align-self: flex-end;
 }
