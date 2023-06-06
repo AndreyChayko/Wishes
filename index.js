@@ -1,3 +1,5 @@
+const maxHearts = 75;
+let currentHeartsNumber = 0;
 document.addEventListener('touchmove', (event) => {
     const body = document.querySelector('body');
     const heart = document.createElement('span');
@@ -5,6 +7,7 @@ document.addEventListener('touchmove', (event) => {
     const x = event.targetTouches[0].clientX - rect.x;
     const y = event.targetTouches[0].clientY - rect.y;
 
+    console.log(currentHeartsNumber);
     heart.style.left = x + 'px';
     heart.style.top = y + 'px';
 
@@ -13,11 +16,14 @@ document.addEventListener('touchmove', (event) => {
     heart.style.height = 20 + size + 'px';
 
     const transformValue = Math.random() * 360;
-    heart.style.transform = `rotate(${transformValue}deg )`;
+    heart.style.transform = `rotate(${transformValue}deg)`;
 
-    body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 1000)
-})
+    if (currentHeartsNumber <= maxHearts) {
+        body.appendChild(heart);
+        currentHeartsNumber++;
+        setTimeout(() => {
+            heart.remove();
+            currentHeartsNumber--;
+        }, 1000);
+    }
+});

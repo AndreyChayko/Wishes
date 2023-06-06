@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+html {
+    overflow: hidden;
+}
 body {
     min-height: 100vh;
     background: #111;
@@ -29,8 +31,8 @@ span {
 span::before {
     content: '';
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 30px;
+    height: 30px;
     background: url(heart.png);
     background-size: cover;
     animation: moveShape 1s linear  infinite;
