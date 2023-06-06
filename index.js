@@ -7,7 +7,6 @@ document.addEventListener('touchmove', (event) => {
     const x = event.targetTouches[0].clientX - rect.x;
     const y = event.targetTouches[0].clientY - rect.y;
 
-    console.log(currentHeartsNumber);
     heart.style.left = x + 'px';
     heart.style.top = y + 'px';
 
