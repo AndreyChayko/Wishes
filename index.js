@@ -1,4 +1,4 @@
-const maxHearts = 75;
+const maxHearts = 100;
 let currentHeartsNumber = 0;
 document.addEventListener('touchmove', (event) => {
     const body = document.querySelector('body');
@@ -22,7 +22,9 @@ document.addEventListener('touchmove', (event) => {
         currentHeartsNumber++;
         setTimeout(() => {
             heart.remove();
-            currentHeartsNumber--;
+            if (currentHeartsNumber !== 0) {
+                currentHeartsNumber--;
+            }
         }, 1000);
     }
 });
