@@ -72,6 +72,13 @@ span::before {
 
 .header {
     font-size: 20px;
+    animation: bouncing .4s ease infinite alternate;
+}
+
+@keyframes bouncing {
+    100% {
+        transform: translateY(-10px);
+    }
 }
 
 .header.hide {
